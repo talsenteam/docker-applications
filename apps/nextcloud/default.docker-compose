@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  database:
+    build:
+      context: './database'
+      dockerfile: 'default.docker'
+    cap_add:
+      - 'SYS_NICE'
+    environment:
+      - 'MYSQL_DATABASE'
+      - 'MYSQL_PASSWORD'
+      - 'MYSQL_RANDOM_ROOT_PASSWORD'
+      - 'MYSQL_USER'
+    image: 'talsenteam/docker-nextcloud:database-v8.0.23'
+    networks:
+      nextcloud:
+    restart: 'no'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/database/var/lib/mysql:/var/lib/mysql'
+  
+  web:
+    build:
+      context: './web'
+      dockerfile: 'default.docker'
+    depends_on:
+      - database
+    image: 'talsenteam/docker-nextcloud:web-v21.0.0'
+    networks:
+      nextcloud:
+    ports:
+      - '80:80'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/web/var/www/html:/var/www/html'
+
+networks:
+  nextcloud:

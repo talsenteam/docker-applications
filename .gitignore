@@ -1,5 +1,11 @@
 
 *
 
+!/apps/
+!/apps/nextcloud/
+!/apps/nextcloud/*/
+!/apps/nextcloud/*/*.docker
+!/apps/nextcloud/.env
+!/apps/nextcloud/*.docker-compose
 !/.gitignore
 !/LICENCE
