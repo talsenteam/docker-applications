@@ -2,10 +2,12 @@
 *
 
 !/docker/
-!/docker/nextcloud/
-!/docker/nextcloud/*/
-!/docker/nextcloud/*/*.docker
-!/docker/nextcloud/.env
-!/docker/nextcloud/*.docker-compose
+!/docker/*/
+!/docker/*/*/
+!/docker/*/*/rootfs/
+!/docker/*/*/rootfs/**
+!/docker/*/*/*.docker
+!/docker/*/.env
+!/docker/*/*.docker-compose
 !/.gitignore
 !/LICENCE

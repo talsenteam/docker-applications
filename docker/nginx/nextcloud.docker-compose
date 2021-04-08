@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  proxy:
+    build:
+      context: './proxy'
+      dockerfile: 'default.docker'
+    image: 'talsenteam/docker-nginx-certbot:proxy-v1.19.8'
+    networks:
+      nextcloud_nextcloud:
+    ports:
+      - '${HOST_HTTP_PORT}:80'
+      - '${HOST_HTTPS_PORT}:443'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - './nextcloud.container.env:/etc/nginx/env/reverse-proxy.env:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/cache/:/cache'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/manual-config/:/manual-config:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/etc/letsencrypt/:/etc/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/lib/letsencrypt/:/var/lib/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/letsencrypt/:/var/log/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/nginx/:/var/log/nginx'
+
+networks:
+  nextcloud_nextcloud:
+    external: true
