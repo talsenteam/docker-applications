@@ -1,6 +1,9 @@
 
 *
 
+!/bash/
+!/bash/*/
+!/bash/*/*.bash
 !/docker/
 !/docker/*/
 !/docker/*/*/
