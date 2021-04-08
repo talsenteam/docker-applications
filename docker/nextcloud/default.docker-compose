@@ -28,8 +28,6 @@ services:
     image: 'talsenteam/docker-nextcloud:web-v21.0.0'
     networks:
       nextcloud:
-    ports:
-      - '80:80'
     restart: '${HOST_CONTAINER_RESTART}'
     volumes:
       - '${HOST_PATH_TO_VOLUMES_ROOT}/web/var/www/html:/var/www/html'
