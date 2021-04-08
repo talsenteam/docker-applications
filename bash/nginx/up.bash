@@ -12,4 +12,4 @@ ensure_variable_app_is_not_empty
 
 cd ./docker/nginx/
 
-docker-compose --file default.docker-compose up --detach
+docker-compose --file ${APP}.docker-compose up --detach
