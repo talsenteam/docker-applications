@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks":
+  [
+    {
+      "label": "nextcloud--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/build.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "nextcloud--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/down.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "nextcloud--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/rebuild.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "nextcloud--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/up.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "nextcloud--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/wipe-volumes.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+  ],
+}
