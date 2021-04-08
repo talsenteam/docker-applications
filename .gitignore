@@ -7,7 +7,7 @@
 !/docker/*/*/rootfs/
 !/docker/*/*/rootfs/**
 !/docker/*/*/*.docker
-!/docker/*/.env
+!/docker/*/*.env
 !/docker/*/*.docker-compose
 !/.gitignore
 !/LICENCE
