@@ -5,5 +5,5 @@ services:
     build:
       context: './proxy'
       dockerfile: 'default.docker'
-    image: 'talsenteam/docker-nginx-certbot:proxy-v1.19.8'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
     restart: '${HOST_CONTAINER_RESTART}'
