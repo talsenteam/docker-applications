@@ -3,6 +3,30 @@
   "tasks":
   [
     {
+      "label": "all--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/all/down.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "all--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/all/wipe-volumes.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "nextcloud--build",
       "type": "shell",
       "command": "/bin/bash",
