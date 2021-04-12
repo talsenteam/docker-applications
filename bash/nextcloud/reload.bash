@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-cd ./docker/nginx/
+cd ./docker/nextcloud/
 
 docker-compose --file default.docker-compose exec proxy /bin/bash /opt/server--nginx-certbot/command-update-configuration.sh proxy.env

@@ -7,3 +7,11 @@ services:
       dockerfile: 'default.docker'
     image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
     restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - './proxy.env:/etc/nginx/env/proxy.env:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/cache/:/cache'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/manual-config/:/manual-config:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/etc/letsencrypt/:/etc/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/lib/letsencrypt/:/var/lib/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/letsencrypt/:/var/log/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/nginx/:/var/log/nginx'

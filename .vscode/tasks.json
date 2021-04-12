@@ -63,6 +63,18 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "nextcloud--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nextcloud/reload.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "nextcloud--up",
       "type": "shell",
       "command": "/bin/bash",
@@ -71,19 +83,6 @@
         "./bash/common/elevate.bash",
         "root",
         "./bash/nextcloud/up.bash",
-      ],
-      "problemMatcher": [ ],
-    },
-    {
-      "label": "nextcloud--up-proxy",
-      "type": "shell",
-      "command": "/bin/bash",
-      "args":
-      [
-        "./bash/common/elevate.bash",
-        "root",
-        "./bash/nginx/up.bash",
-        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -136,7 +135,7 @@
       "problemMatcher": [ ],
     },
     {
-      "label": "nginx--reload",
+      "label": "nginx--reload-proxy",
       "type": "shell",
       "command": "/bin/bash",
       "args":
@@ -156,6 +155,18 @@
         "./bash/common/elevate.bash",
         "root",
         "./bash/nginx/wipe-volumes.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "nginx--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/nginx/up.bash",
       ],
       "problemMatcher": [ ],
     },
