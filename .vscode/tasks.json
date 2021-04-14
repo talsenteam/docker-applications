@@ -32,7 +32,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/build.bash",
+        "./bash/common/run-build-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -42,7 +43,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/down.bash",
+        "./bash/common/run-down-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -52,7 +54,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/rebuild.bash",
+        "./bash/common/run-rebuild-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -62,7 +65,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/reload-proxy.bash",
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -72,7 +76,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/up.bash",
+        "./bash/common/run-up-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -82,7 +87,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/kimai/wipe-volumes.bash",
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "kimai",
       ],
       "problemMatcher": [ ],
     },
@@ -92,7 +98,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/build.bash",
+        "./bash/common/run-build-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -102,7 +109,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/down.bash",
+        "./bash/common/run-down-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -112,7 +120,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/rebuild.bash",
+        "./bash/common/run-rebuild-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -122,7 +131,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/reload-proxy.bash",
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -132,7 +142,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/up.bash",
+        "./bash/common/run-up-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -142,7 +153,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nextcloud/wipe-volumes.bash",
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "nextcloud",
       ],
       "problemMatcher": [ ],
     },
@@ -152,7 +164,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/build.bash",
+        "./bash/common/run-build-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },
@@ -162,7 +175,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/down.bash",
+        "./bash/common/run-down-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },
@@ -172,7 +186,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/rebuild.bash",
+        "./bash/common/run-rebuild-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },
@@ -182,7 +197,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/reload-proxy.bash",
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },
@@ -192,7 +208,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/up.bash",
+        "./bash/common/run-up-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },
@@ -202,7 +219,8 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/nginx/wipe-volumes.bash",
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "nginx",
       ],
       "problemMatcher": [ ],
     },

@@ -6,5 +6,5 @@ shopt -s inherit_errexit
 /bin/bash \
   ./bash/common/elevate.bash \
   root \
-  ./bash/common/run-down.bash \
-  kimai
+  ./bash/common/run-up.bash \
+  ${1}
