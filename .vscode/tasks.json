@@ -8,9 +8,7 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/common/elevate.bash",
-        "root",
-        "./bash/all/down.bash",
+        "./bash/all/run-down-as-root.bash",
       ],
       "problemMatcher": [ ],
     },
@@ -20,9 +18,7 @@
       "command": "/bin/bash",
       "args":
       [
-        "./bash/common/elevate.bash",
-        "root",
-        "./bash/all/wipe-volumes.bash",
+        "./bash/all/run-wipe-volumes-as-root.bash",
       ],
       "problemMatcher": [ ],
     },

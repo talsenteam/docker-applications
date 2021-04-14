@@ -69,7 +69,9 @@ function wipe_volumes() {
 }
 
 function run_wipe_volumes() {
+  set +u
   local APP=${1}
+  set -u
 
   wipe_volumes ${APP}
 }
