@@ -1,0 +1,22 @@
+FROM kimai/kimai2:apache-debian-1.13-prod
+
+USER root
+
+RUN apt-get install --yes --no-install-recommends           \
+                    rsync                                   \
+                    sudo                                    \
+ # prevent sudo from password promting                      \
+ && adduser www-data sudo                                   \
+ && echo "www-data ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
+ # store default for mapped volumes                         \
+ && mkdir --parents                                         \
+          /default/opt/kimai/var                            \
+ && rsync --archive                                         \
+      /opt/kimai/var/                                       \
+      /default/opt/kimai/var
+
+COPY ./rootfs /
+
+USER www-data
+
+ENTRYPOINT [ "/bin/bash", "/opt/kimai/entrypoint.bash" ]

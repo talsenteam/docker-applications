@@ -27,6 +27,78 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "kimai--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/build.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "kimai--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/down.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "kimai--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/rebuild.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "kimai--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/reload.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "kimai--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/up.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "kimai--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/elevate.bash",
+        "root",
+        "./bash/kimai/wipe-volumes.bash",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "nextcloud--build",
       "type": "shell",
       "command": "/bin/bash",

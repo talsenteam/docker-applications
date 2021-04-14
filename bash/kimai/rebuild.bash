@@ -3,6 +3,6 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-cd ./docker/nginx/
+cd ./docker/kimai/
 
 docker-compose --file default.docker-compose build --no-cache

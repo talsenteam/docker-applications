@@ -5,4 +5,4 @@ shopt -s inherit_errexit
 
 source ./bash/common/wipe-volumes.bash
 
-wipe_volumes nginx
+wipe_volumes kimai
