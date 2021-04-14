@@ -6,5 +6,5 @@ shopt -s inherit_errexit
 /bin/bash \
   ./bash/common/elevate.bash \
   root \
-  ./bash/common/run-up.bash \
+  ./bash/common/run-reload-proxy.bash \
   kimai

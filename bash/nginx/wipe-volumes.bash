@@ -3,6 +3,8 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-source ./bash/common/wipe-volumes.bash
-
-wipe_volumes nginx
+/bin/bash \
+  ./bash/common/elevate.bash \
+  root \
+  ./bash/common/run-wipe-volumes.bash \
+  nginx

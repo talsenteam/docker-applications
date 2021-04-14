@@ -3,6 +3,8 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-cd ./docker/nginx/
-
-docker-compose --file default.docker-compose up --detach
+/bin/bash \
+  ./bash/common/elevate.bash \
+  root \
+  ./bash/common/run-up.bash \
+  nginx

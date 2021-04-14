@@ -3,6 +3,8 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-cd ./docker/kimai/
-
-docker-compose --file default.docker-compose down
+/bin/bash \
+  ./bash/common/elevate.bash \
+  root \
+  ./bash/common/run-down.bash \
+  kimai

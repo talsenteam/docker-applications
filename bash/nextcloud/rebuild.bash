@@ -3,6 +3,8 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-cd ./docker/nextcloud/
-
-docker-compose --file default.docker-compose build --no-cache
+/bin/bash \
+  ./bash/common/elevate.bash \
+  root \
+  ./bash/common/run-rebuild.bash \
+  nextcloud
