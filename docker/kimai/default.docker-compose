@@ -21,6 +21,8 @@ services:
     build:
       context: './web'
       dockerfile: 'default.docker'
+    depends_on:
+      - 'database'
     environment:
       - 'ADMINMAIL'
       - 'ADMINPASS'
@@ -42,7 +44,7 @@ services:
 
   proxy:
     depends_on:
-      - web
+      - 'web'
     image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
     networks:
       kimai:
