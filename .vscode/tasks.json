@@ -23,6 +23,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "gitlab-ce--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-ce--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-ce--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-ce--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-ce--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-ce--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "gitlab-ce",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "kimai--build",
       "type": "shell",
       "command": "/bin/bash",

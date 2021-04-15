@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: './app'
+      dockerfile: 'default.docker'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url '${HTTP_SCHEME}://${HOSTNAME}'
+        gitlab_rails['gitlab_shell_ssh_port'] = ${CONTAINER_SSH_PORT}
+        nginx['client_max_body_size'] = '250M'
+        registry_external_url 'http://localhost:${CONTAINER_REGISTRY_PORT}'
+        registry_nginx['enable'] = true
+    image: 'talsenteam/docker-applications:gitlab-app-v13.9.3-ce.0'
+    hostname: '${HOSTNAME}'
+    networks:
+      gitlab:
+    ports:
+      - '${HOST_SSH_PORT}:${CONTAINER_SSH_PORT}'
+      - '${HOST_REGISTRY_PORT}:${CONTAINER_REGISTRY_PORT}'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/all-in-one/etc/gitlab:/etc/gitlab'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/all-in-one/var/log/gitlab:/var/log/gitlab'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/all-in-one/var/opt/gitlab:/var/opt/gitlab'
+
+  proxy:
+    depends_on:
+      - 'app'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
+    networks:
+      gitlab:
+    ports:
+      - '${HOST_HTTP_PORT}:80'
+      - '${HOST_HTTPS_PORT}:443'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - './proxy.env:/etc/nginx/env/proxy.env:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/cache/:/cache'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/manual-config/:/manual-config:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/etc/letsencrypt/:/etc/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/lib/letsencrypt/:/var/lib/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/letsencrypt/:/var/log/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/nginx/:/var/log/nginx'
+
+networks:
+  gitlab:
