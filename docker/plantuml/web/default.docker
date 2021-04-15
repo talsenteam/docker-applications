@@ -1,0 +1,1 @@
+FROM plantuml/plantuml-server:tomcat-v1.2021.2

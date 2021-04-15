@@ -287,6 +287,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "plantuml--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "plantuml--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "plantuml--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "plantuml--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "plantuml--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "plantuml--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "plantuml",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "wordpress--build",
       "type": "shell",
       "command": "/bin/bash",
