@@ -286,5 +286,71 @@
       ],
       "problemMatcher": [ ],
     },
+    {
+      "label": "wordpress--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "wordpress--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "wordpress--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "wordpress--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "wordpress--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "wordpress--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "wordpress",
+      ],
+      "problemMatcher": [ ],
+    },
   ],
 }
