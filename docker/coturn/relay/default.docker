@@ -1,0 +1,12 @@
+FROM ubuntu:focal
+
+RUN apt-get update --yes \
+ && apt-get install --yes --no-install-recommends \
+                   coturn \
+                   libsqlite3-dev \
+                   sqlite3
+
+COPY ./rootfs/opt/server--coturn/entrypoint.sh /opt/server--coturn/entrypoint.sh
+COPY ./rootfs/templates/turnserver.conf        /templates/turnserver.conf
+
+ENTRYPOINT [ "/bin/bash", "/opt/server--coturn/entrypoint.sh" ]

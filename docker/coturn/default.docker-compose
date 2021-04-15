@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  relay:
+    build:
+      context: './relay'
+      dockerfile: 'default.docker'
+    command: '${COTURN_COMMAND}'
+    image: 'talsenteam/docker-applications:coturn-relay-v4.5.1.1'
+    network_mode: 'host'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/relay/data:/data'
