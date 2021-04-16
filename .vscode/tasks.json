@@ -408,6 +408,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "tine20--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "tine20--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "tine20--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "tine20--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "tine20--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "tine20--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "tine20",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "wordpress--build",
       "type": "shell",
       "command": "/bin/bash",
