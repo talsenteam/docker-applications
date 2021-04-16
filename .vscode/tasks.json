@@ -144,6 +144,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "jitsi-meet--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "jitsi-meet--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "jitsi-meet--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "jitsi-meet--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "jitsi-meet--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "jitsi-meet--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "jitsi-meet",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "kimai--build",
       "type": "shell",
       "command": "/bin/bash",
