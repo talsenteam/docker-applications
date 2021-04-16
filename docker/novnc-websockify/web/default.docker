@@ -1,0 +1,21 @@
+FROM node:12
+
+ENV REPO_NOVNC_URL=https://github.com/novnc/noVNC.git
+ENV REPO_NOVNC_TAG=v1.2.0
+ENV REPO_NOVNC_DIR=/app
+ENV REPO_WEBSOCKIFY_URL=https://github.com/novnc/websockify.git
+ENV REPO_WEBSOCKIFY_TAG=v0.9.0
+ENV REPO_WEBSOCKIFY_DIR=/app/utils/websockify
+
+RUN apt-get update --yes \
+ && apt-get install --no-install-recommends --yes \
+                git
+
+RUN git clone --recurse-submodules ${REPO_NOVNC_URL} ${REPO_NOVNC_DIR} -b ${REPO_NOVNC_TAG} \
+ && git clone --recurse-submodules ${REPO_WEBSOCKIFY_URL} ${REPO_WEBSOCKIFY_DIR} -b ${REPO_WEBSOCKIFY_TAG}
+
+COPY ./rootfs/ /
+
+WORKDIR ${REPO_NOVNC_DIR}
+
+ENTRYPOINT [ "bash", "/opt/novnc/entrypoint.bash" ]

@@ -408,6 +408,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "novnc-websockify--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "novnc-websockify--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "novnc-websockify--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "novnc-websockify--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "novnc-websockify--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "novnc-websockify--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "novnc-websockify",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "plantuml--build",
       "type": "shell",
       "command": "/bin/bash",
