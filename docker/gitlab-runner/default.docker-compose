@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  runner:
+    build:
+      context: './runner'
+      dockerfile: 'default.docker'
+    image: 'talsenteam/docker-applications:gitlab-runner-runner-v13.6.0'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/runner/etc/gitlab-runner:/etc/gitlab-runner'

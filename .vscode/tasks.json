@@ -144,6 +144,61 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "gitlab-runner--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "gitlab-runner",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-runner--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "gitlab-runner",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-runner--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "gitlab-runner",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-runner--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "gitlab-runner",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "gitlab-runner--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "gitlab-runner",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "jitsi-meet--build",
       "type": "shell",
       "command": "/bin/bash",
