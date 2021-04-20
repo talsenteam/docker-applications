@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  repeater:
+    build:
+      context: './repeater'
+      dockerfile: 'default.docker'
+    image: 'talsenteam/docker-applications:uvnc-repeater-repeater-v0.17'
+    network_mode: 'host'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/repeater/default:/default'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/repeater/override:/override'

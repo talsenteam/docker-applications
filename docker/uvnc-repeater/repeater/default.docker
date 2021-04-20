@@ -1,0 +1,38 @@
+FROM ubuntu:bionic
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV UVNC_TARBALL=uvncrep017-ws.tar
+ENV UVNC_TARBALL_URL=http://www.wisdomsoftware.gr/download/${UVNC_TARBALL}.gz
+
+RUN apt-get update --yes \
+ && apt-get install --no-install-recommends --yes \
+                    build-essential \
+                    gzip \
+                    libx11-6 \
+                    libx11-dev \
+                    libxtst6 \
+                    nano \
+                    psmisc \
+                    rsync \
+                    x-window-system-core \
+                    x-window-system \
+                    wget
+
+WORKDIR /usr/local/src
+
+RUN wget ${UVNC_TARBALL_URL} \
+ && gunzip ${UVNC_TARBALL}.gz \
+ && tar -xvf ${UVNC_TARBALL} \
+ && rm ${UVNC_TARBALL}
+
+WORKDIR /usr/local/src/uvncrep017-ws
+
+RUN make \
+ && make install \
+ && useradd uvncrep
+
+WORKDIR /usr/local/src
+
+COPY ./rootfs/ /
+
+ENTRYPOINT [ "bash", "/opt/uvnc-repeater/entrypoint.bash" ]

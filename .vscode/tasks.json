@@ -661,6 +661,61 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "uvnc-repeater--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "uvnc-repeater",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "uvnc-repeater--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "uvnc-repeater",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "uvnc-repeater--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "uvnc-repeater",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "uvnc-repeater--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "uvnc-repeater",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "uvnc-repeater--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "uvnc-repeater",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "wordpress--build",
       "type": "shell",
       "command": "/bin/bash",
