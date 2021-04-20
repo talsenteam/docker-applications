@@ -661,6 +661,83 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "taiga-io--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--setup",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-setup-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "tine20--build",
       "type": "shell",
       "command": "/bin/bash",

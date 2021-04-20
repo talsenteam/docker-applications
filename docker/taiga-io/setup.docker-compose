@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  app-setup:
+    build:
+      context: './app'
+      dockerfile: 'default.docker'
+    command: 'generate'
+    environment:
+      - 'URL'
+      - 'SCHEME'
+      - 'EMAIL'
+      - 'SECRET_KEY_API'
+      - 'SECRET_KEY_EVENTS'
+      - 'SECRET_KEY_PSQL'
+      - 'EMAIL_USE_TLS'
+      - 'EMAIL_HOST'
+      - 'EMAIL_HOST_USER'
+      - 'EMAIL_HOST_PASSWORD'
+      - 'EMAIL_PORT'
+    image: 'talsenteam/docker-applications:taiga-io-app-v5.5.5'
+    networks:
+      taiga:
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/logs:/dat/logs'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/data/db:/var/lib/postgresql/data'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/data/media:/dat/taiga/media'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/data/proxy:/dat/nginx/data'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/conf/back:/dat/taiga/back/conf'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/conf/events:/dat/taiga/events/conf'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/conf/front:/dat/taiga/front/conf'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/conf/proxy:/dat/nginx/conf'
+
+networks:
+  taiga:
