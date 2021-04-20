@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  version:
+    build:
+      context: './app'
+      dockerfile: 'default.docker'
+    command: 'version'
+    environment:
+      - 'URL'
+      - 'SCHEME'
+      - 'EMAIL'
+      - 'SECRET_KEY_API'
+      - 'SECRET_KEY_EVENTS'
+      - 'SECRET_KEY_PSQL'
+      - 'EMAIL_USE_TLS'
+      - 'EMAIL_HOST'
+      - 'EMAIL_HOST_USER'
+      - 'EMAIL_HOST_PASSWORD'
+      - 'EMAIL_PORT'
+    image: 'talsenteam/docker-applications:taiga-io-app-v5.5.5'
+    networks:
+      taiga:
+    restart: '${HOST_CONTAINER_RESTART}'
+
+networks:
+  taiga:

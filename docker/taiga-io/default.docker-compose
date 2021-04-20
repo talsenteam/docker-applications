@@ -5,7 +5,7 @@ services:
     build:
       context: './app'
       dockerfile: 'default.docker'
-    command: '${TAIGA_IO_COMMAND}'
+    command: 'start'
     environment:
       - 'URL'
       - 'SCHEME'

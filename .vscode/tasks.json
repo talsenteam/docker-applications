@@ -738,6 +738,28 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "taiga-io--upgrade",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-upgrade-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "taiga-io--version",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-version-as-root.bash",
+        "taiga-io",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "taiga-io--wipe-volumes",
       "type": "shell",
       "command": "/bin/bash",

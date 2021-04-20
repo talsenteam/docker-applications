@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  setup:
+  upgrade:
     build:
       context: './app'
       dockerfile: 'default.docker'
-    command: 'generate'
+    command: 'upgrade'
     environment:
       - 'URL'
       - 'SCHEME'

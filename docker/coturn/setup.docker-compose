@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  relay:
+  setup:
     build:
       context: './relay'
       dockerfile: 'default.docker'
