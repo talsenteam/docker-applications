@@ -12,7 +12,8 @@
 !/docker/*/*/rootfs/
 !/docker/*/*/rootfs/**
 !/docker/*/*/*.docker
-!/docker/*/*.env
+!/docker/*/*.conf
 !/docker/*/*.docker-compose
+!/docker/*/*.env
 !/.gitignore
 !/LICENCE

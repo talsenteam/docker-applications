@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: './web'
+      dockerfile: 'default.docker'
+    cap_add:
+      - 'MKNOD'
+    environment:
+      - 'domain'
+    image: 'talsenteam/docker-applications:collabora-code-web-v4.2.5.3'
+    networks:
+      collabora:
+    restart: '${HOST_CONTAINER_RESTART}'
+
+  proxy:
+    depends_on:
+      - 'web'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
+    networks:
+      collabora:
+    ports:
+      - '${HOST_HTTP_PORT}:80'
+      - '${HOST_HTTPS_PORT}:443'
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - './proxy.conf:/templates/vhost.template.conf:ro'
+      - './proxy.env:/etc/nginx/env/proxy.env:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/cache/:/cache'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/manual-config/:/manual-config:ro'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/etc/letsencrypt/:/etc/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/lib/letsencrypt/:/var/lib/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/letsencrypt/:/var/log/letsencrypt'
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/var/log/nginx/:/var/log/nginx'
+
+networks:
+  collabora:

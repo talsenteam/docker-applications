@@ -23,6 +23,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "collabora-code--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "collabora-code--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "collabora-code--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "collabora-code--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "collabora-code--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "collabora-code--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "collabora-code",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "coturn--build",
       "type": "shell",
       "command": "/bin/bash",
