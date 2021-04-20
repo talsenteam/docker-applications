@@ -5,7 +5,7 @@ services:
     build:
       context: './relay'
       dockerfile: 'default.docker'
-    command: 'start'
+    command: 'generate'
     image: 'talsenteam/docker-applications:coturn-relay-v4.5.1.1'
     network_mode: 'host'
     restart: '${HOST_CONTAINER_RESTART}'

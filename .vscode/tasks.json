@@ -122,6 +122,17 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "coturn--setup",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-setup-as-root.bash",
+        "coturn",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "coturn--up",
       "type": "shell",
       "command": "/bin/bash",
