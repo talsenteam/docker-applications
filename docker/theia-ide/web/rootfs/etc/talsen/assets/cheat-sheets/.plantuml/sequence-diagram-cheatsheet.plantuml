@@ -1,0 +1,34 @@
+@startuml
+
+skinparam monochrome reverse
+
+actor User as user
+entity "Vending Machine" as vending
+entity "Ready State" as ready
+entity "Product Chosen State" as chosen
+
+activate user
+user -> vending ++ : Choose Product
+vending -> ready ++ : Handle request
+ready -> chosen ++ : Product ID valid
+ready <- chosen !!
+vending <- chosen -- : Done
+user <- vending -- : Product ID selected
+
+user -> vending ++ : Insert coins
+vending -> chosen ++ : Handle request
+chosen -> chosen : Nothing happens
+vending <- chosen -- : Done
+user <- vending -- : Display new coin count
+
+
+user -> vending++ : Want money back
+vending -> chosen ++ : Handle request
+chosen -> ready ++ : Valid eject request
+chosen <- ready !!
+vending <- ready : Done
+user <- vending : Eject coins
+
+' dispense was spared for convenience :)
+
+@enduml

@@ -1,0 +1,51 @@
+@startuml
+
+skinparam linetype ortho
+skinparam monochrome reverse
+
+Car "1" o-- "4" Wheel : Aggregation \n ("A Car has Wheels")
+Car <|-- Cabrio : Inheritance \n("A Cabrio is a Car")
+note left: Has a top
+Car - Driver : Association \n("A Driver has a Car and a \n Car has a Driver")
+Driver *-- DrivingLicense : Composition \n ("A Driver owns a DrivingLicense")
+Car *-- Key
+Driver o-- Key
+
+class Driver{
+    + DrivingLicense
+    - Key
+    + navigate to goal()
+    - get in()
+}
+
+
+class Car{
+    + Key
+    - Wheel*
+    + start motor(Key)
+}
+
+interface IgnitionLock{
+    start motor(Key)
+}
+IgnitionLock ^.. Car : Realization
+
+note top of IgnitionLock : This is an interface.
+
+note "Free floating note" as N1
+note "Note attached to \n multiple elements \n with different connections" as N2
+Wheel x--> N2 
+Key }..+ N2 : with arrow >
+DrivingLicense ..# N2 : < arrow upwards
+
+object "My small red Cabrio" as MyCar
+Cabrio <.. MyCar : instantiated
+
+class Multitool implements Knife, ScrewDriver, Pincers
+
+class Rabbit extends Mammal
+
+interface Knife{
+    Blade
+}
+@enduml

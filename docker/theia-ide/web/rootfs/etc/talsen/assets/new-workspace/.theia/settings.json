@@ -1,0 +1,6 @@
+{
+    "editor.autoSave": "on",
+    "plantuml.webservice": "//plantuml.talsen.team/svg/",
+    "preview.openByDefault": true,
+    "workbench.list.openMode": "doubleClick"
+}

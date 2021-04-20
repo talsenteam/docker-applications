@@ -1,0 +1,3 @@
+/.build/**
+/src/obj/**
+/src/coverage.opencover.xml

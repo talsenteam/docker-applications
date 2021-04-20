@@ -11,6 +11,8 @@
 !/docker/*/*/
 !/docker/*/*/rootfs/
 !/docker/*/*/rootfs/**
+!/docker/*/*/rootfs-build/
+!/docker/*/*/rootfs-build/**
 !/docker/*/*/*.docker
 !/docker/*/*.conf
 !/docker/*/*.docker-compose

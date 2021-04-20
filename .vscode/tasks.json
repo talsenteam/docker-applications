@@ -738,6 +738,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "theia-ide--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "theia-ide",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "tine20--build",
       "type": "shell",
       "command": "/bin/bash",

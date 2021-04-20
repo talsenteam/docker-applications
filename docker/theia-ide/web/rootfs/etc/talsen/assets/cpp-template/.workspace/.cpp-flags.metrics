@@ -1,0 +1,4 @@
+-fprofile-arcs
+-ftest-coverage
+-fno-exceptions
+-fno-inline

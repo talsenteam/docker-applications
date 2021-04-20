@@ -1,0 +1,51 @@
+@startuml
+
+skinparam linetype ortho
+skinparam monochrome reverse
+
+Auto "1" o-- "4" Rad : Aggregation \n ("Ein Auto hat Räder")
+Auto <|-- Cabrio : Vererbung \n("Ein Cabrio ist ein Auto")
+note left: Hat kein Dach
+Auto - Fahrer : Assiziation \n("Ein Fahrer hat ein Auto und \n ein Auto hat einen Fahrer")
+Fahrer *-- Führerschein : Komposition \n ("Ein Fahrer besitzt einen Führerschein")
+Auto *-- Schlüssel
+Fahrer o-- Schlüssel
+
+class Fahrer{
+    + Führerschein
+    - Schlüssel
+    + zum Ziel bringen()
+    - steig ein()
+}
+
+
+class Auto{
+    + Schlüssel
+    - Rad*
+    + Motor starten(Schlüssel)
+}
+
+interface Zündschloss{
+    Motor starten(Schlüssel)
+}
+Zündschloss ^.. Auto : Realisation
+
+note top of Zündschloss : Das ist ein Interface.
+
+note "Freie schwebende Notiz" as N1
+note "Notiz an \n mehreren Elementen\n mit unterschiedlichen Verbindungen" as N2
+Rad x--> N2 
+Schlüssel }..+ N2 : mit Pfeilchen >
+Führerschein ..# N2 : < Pfeil rauf
+
+object "Mein kleines rotes Cabrio" as MeinAuto
+Cabrio <.. MeinAuto : instanziert 
+
+class Multitool implements Messer, Schraubenzieher, Zange
+
+class Hase extends Säugetier
+
+interface Messer{
+    Klinge
+}
+@enduml

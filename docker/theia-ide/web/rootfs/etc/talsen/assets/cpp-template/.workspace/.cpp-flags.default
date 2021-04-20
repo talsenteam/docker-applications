@@ -1,0 +1,5 @@
+-Wall
+-Wconversion
+-Wextra
+-Wold-style-cast
+-pedantic

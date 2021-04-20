@@ -1,0 +1,11 @@
+@startuml
+
+hide empty description
+skinparam monochrome reverse
+
+ [*] -> Ready
+ Ready -> ProductChosen : choose product
+ ProductChosen -> Ready : eject coins
+ ProductChosen -> Ready : dispense
+
+@enduml

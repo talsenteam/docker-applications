@@ -1,0 +1,4 @@
+/usr/include/*
+/usr/local/*
+*main.cpp
+*behavior*
