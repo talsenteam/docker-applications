@@ -1,0 +1,14 @@
+#!/usr/bin/expect
+
+spawn register_new_matrix_user "-c" "/data/homeserver.yaml"
+expect "New user localpart"
+send "$env(ENV_NAME_USER)\r"
+expect "Password:"
+send "$env(ENV_PASS_USER)\r"
+expect "Confirm password:"
+send "$env(ENV_PASS_USER)\r"
+expect "Make admin"
+send "no\r"
+expect "Sending registration request..."
+expect "Success!"
+interact

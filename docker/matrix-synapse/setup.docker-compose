@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  setup:
+    build:
+      context: './app'
+      dockerfile: 'default.docker'
+    command: 'generate'
+    environment:
+      - 'REPORT_STATS'
+      - 'SERVER_NAME'
+    image: 'talsenteam/docker-applications:matrix-synapse-app-v0.34.1.1'
+    networks:
+      matrix:
+    restart: '${HOST_CONTAINER_RESTART}'
+    volumes:
+      - '${HOST_PATH_TO_VOLUMES_ROOT}/app/data:/data'
+
+networks:
+  matrix:

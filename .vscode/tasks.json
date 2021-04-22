@@ -408,6 +408,83 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "matrix-synapse--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--setup",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-setup-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "matrix-synapse--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "matrix-synapse",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "nextcloud--build",
       "type": "shell",
       "command": "/bin/bash",
