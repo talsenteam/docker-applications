@@ -13,6 +13,7 @@ function run_down() {
     /bin/bash \
       ./bash/common/run-down.bash \
       ${X}
+    echo "info: ${X} .. done"
   done
 }
 
