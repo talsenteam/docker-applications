@@ -54,4 +54,4 @@ cp --archive               \
 echo ${WORKSPACE_NAME} > ${WORKSPACE_DIR}/${WORKSPACE_NAME_INDICATOR}
 
 echo "--> A new empty workspace has been created."
-print_workspace_url ${WORKSPACE_NAME}
+print_workspace_url ${WORKSPACE_NAME_SUFFIX}-${WORKSPACE_NAME}
