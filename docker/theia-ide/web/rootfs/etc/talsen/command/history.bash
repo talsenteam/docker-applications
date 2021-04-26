@@ -1,11 +1,11 @@
 #!/bin/bash
 
 set -euo pipefail
+shopt -s inherit_errexit
 
 source /etc/talsen/util/detect-command-name.bash
 source /etc/talsen/util/detect-help-flag.bash
 source /etc/talsen/util/print-help-flag-text.bash
-source /etc/talsen/util/print-workspace-url.bash
 
 source /etc/talsen/util/indicator/workspace.bash
 
@@ -14,7 +14,7 @@ SCRIPT_NAME=$( detect_command_name ${0} )
 function print_help() {
     echo "Usage: dojo ${SCRIPT_NAME}"
     print_help_flag_text
-    echo "--> Prints the workspace URL."
+    echo "--> Prints the workspace history."
 }
 
 if [[ $( detect_help_flag ${@:1} ) = 1 ]];
@@ -31,6 +31,8 @@ then
     exit 1
 fi
 
-WORKSPACE_NAME=$( basename $( realpath . ) )
+COMMAND="git log --oneline"
 
-print_workspace_url ${WORKSPACE_NAME}
+echo "--> The workspace history is:"
+echo "--@ ${COMMAND}"
+${COMMAND}

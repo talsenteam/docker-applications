@@ -5,6 +5,7 @@ set -euo pipefail
 source /etc/talsen/util/detect-command-name.bash
 source /etc/talsen/util/detect-help-flag.bash
 source /etc/talsen/util/print-help-flag-text.bash
+source /etc/talsen/util/print-workspace-url.bash
 
 source /etc/talsen/util/indicator/workspace-name.bash
 
@@ -52,5 +53,5 @@ cp --archive               \
 
 echo ${WORKSPACE_NAME} > ${WORKSPACE_DIR}/${WORKSPACE_NAME_INDICATOR}
 
-echo "--> A new empty workspace has been created at:"
-echo "      ${WORKSPACE_URL}"
+echo "--> A new empty workspace has been created."
+print_workspace_url ${WORKSPACE_NAME}

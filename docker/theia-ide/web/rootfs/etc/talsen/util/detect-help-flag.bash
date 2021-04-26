@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# usage: if [ $( detect_help_flag ${@:1} ) = 1 ]; then print_help fi
 function detect_help_flag() {
     if [ ${#} = 0 ];
     then
