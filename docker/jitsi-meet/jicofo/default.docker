@@ -1,3 +1,1 @@
-FROM jitsi/jicofo:stable-4857
-
-COPY ./rootfs/ /
+FROM jitsi/jicofo:stable-5765-1
