@@ -6,6 +6,7 @@ class Dummy
 {
 public:
   int get_value() const;
+  float convert(int) const;
 };
 
 #endif // GUARD_DUMMY_HPP_
