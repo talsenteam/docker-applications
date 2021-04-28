@@ -1,5 +1,6 @@
 {
     "editor.autoSave": "on",
+    "editor.renderWhitespace": "all",
     "plantuml.webservice": "//plantuml.talsen.team/svg/",
     "preview.openByDefault": true,
     "workbench.list.openMode": "doubleClick"
