@@ -1,0 +1,3 @@
+FROM jitsi/jvb:stable-4857
+
+COPY ./rootfs/ /
