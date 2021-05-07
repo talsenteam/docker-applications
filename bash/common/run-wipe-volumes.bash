@@ -36,28 +36,31 @@ function wipe_volumes() {
 
   local VAR_ARE_THERE_ANY_VOLUMES="false"
 
-  local DIR_TO_WIPE="$( realpath ./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT} )"
-
-  if [ -d ${DIR_TO_WIPE} ];
+  if [ -d "./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT}" ] ;
   then
-      for VAR_NAME_OF_VOLUME in $( ls --almost-all ${DIR_TO_WIPE}/ )
-      do
-          local VAR_PATH_TO_VOLUME=${DIR_TO_WIPE}/${VAR_NAME_OF_VOLUME}/
-          if [ ! -d ${VAR_PATH_TO_VOLUME} ];
-          then
-              continue
-          fi
+    local DIR_TO_WIPE="$( realpath ./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT} )"
 
-          echo -E "info: * wiping '${VAR_NAME_OF_VOLUME}' ..."
+    if [ -d ${DIR_TO_WIPE} ];
+    then
+        for VAR_NAME_OF_VOLUME in $( ls --almost-all ${DIR_TO_WIPE}/ )
+        do
+            local VAR_PATH_TO_VOLUME=${DIR_TO_WIPE}/${VAR_NAME_OF_VOLUME}/
+            if [ ! -d ${VAR_PATH_TO_VOLUME} ];
+            then
+                continue
+            fi
 
-          rm --recursive           \
-              --force               \
-              ${VAR_PATH_TO_VOLUME}
+            echo -E "info: * wiping '${VAR_NAME_OF_VOLUME}' ..."
 
-          echo -e "info: * wiping '${VAR_NAME_OF_VOLUME}' ... $( __done )"
+            rm --recursive           \
+                --force               \
+                ${VAR_PATH_TO_VOLUME}
 
-          VAR_ARE_THERE_ANY_VOLUMES="true"
-      done
+            echo -e "info: * wiping '${VAR_NAME_OF_VOLUME}' ... $( __done )"
+
+            VAR_ARE_THERE_ANY_VOLUMES="true"
+        done
+    fi
   fi
 
   if [ ${VAR_ARE_THERE_ANY_VOLUMES} = "false" ];
