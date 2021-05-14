@@ -6,5 +6,8 @@ RUN apt-get update --yes \
                     ssh \
                     sshpass \
                     sudo \
+ # fixes error: missing .ssh directory (for ssh and ssh-keyscan)
  && mkdir --parents /root/.ssh \
+ # fixes error: Missing privilege separation directory: /run/sshd
+ && mkdir --parents /run/sshd \
  && ansible-playbook --version
