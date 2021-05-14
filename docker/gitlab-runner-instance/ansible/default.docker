@@ -3,5 +3,6 @@ FROM ubuntu:bionic
 RUN apt-get update --yes \
  && apt-get install --no-install-recommends --yes \
                     ansible \
+                    ssh \
                     sshpass \
  && ansible-playbook --version
