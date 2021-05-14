@@ -35,8 +35,16 @@ function wipe_volumes() {
   source ./docker/${APP}/.env
 
   local VAR_ARE_THERE_ANY_VOLUMES="false"
+  local IS_HOST_PATH_TO_VOLUMES_ROOT_UNSET="false"
 
-  if [ -d "./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT}" ] ;
+  set +u
+  if [ "${HOST_PATH_TO_VOLUMES_ROOT}" = "" ] ;
+  then
+    IS_HOST_PATH_TO_VOLUMES_ROOT_UNSET="true"
+  fi
+  set -u
+
+  if [ "${IS_HOST_PATH_TO_VOLUMES_ROOT_UNSET}" = "false" ] && [ -d "./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT}" ] ;
   then
     local DIR_TO_WIPE="$( realpath ./docker/${APP}/${HOST_PATH_TO_VOLUMES_ROOT} )"
 
