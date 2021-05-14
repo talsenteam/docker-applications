@@ -1,0 +1,6 @@
+FROM ubuntu:bionic
+
+RUN apt-get update --yes \
+ && apt-get install --no-install-recommends --yes \
+                    ansible \
+ && ansible-playbook --version

@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  ansible:
+    build:
+      context: './ansible'
+      dockerfile: 'default.docker'
+    image: 'talsenteam/docker-applications:gitlab-runner-instance-ansible-v2.5.1'
+    restart: '${HOST_CONTAINER_RESTART}'
