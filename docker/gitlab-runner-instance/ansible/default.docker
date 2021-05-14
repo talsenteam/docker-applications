@@ -5,4 +5,6 @@ RUN apt-get update --yes \
                     ansible \
                     ssh \
                     sshpass \
+                    sudo \
+ && mkdir --parents /root/.ssh \
  && ansible-playbook --version
