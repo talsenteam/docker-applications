@@ -53,7 +53,7 @@ namespace
     constexpr float EXPECTED_RESULT_FOR_CASE_2 = 345.5f;
 }
 
-INSTANTIATE_TEST_CASE_P(Numbers_Parameters, Parameterization, testing::Values(
+INSTANTIATE_TEST_SUITE_P(Numbers, Parameterization, testing::Values(
     TestParameter { INPUT_FOR_CASE_1, EXPECTED_RESULT_FOR_CASE_1, },
     TestParameter { INPUT_FOR_CASE_2, EXPECTED_RESULT_FOR_CASE_2, }
 ));
