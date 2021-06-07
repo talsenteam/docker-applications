@@ -9,7 +9,7 @@ services:
       - 'MKNOD'
     environment:
       - 'domain'
-    image: 'talsenteam/docker-applications:collabora-code-web-v4.2.5.3'
+    image: 'talsenteam/docker-applications:collabora-code-web-v6.4.9.2'
     networks:
       collabora:
     restart: '${HOST_CONTAINER_RESTART}'
