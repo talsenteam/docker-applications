@@ -12,7 +12,7 @@ services:
       - 'MYSQL_PASSWORD'
       - 'MYSQL_RANDOM_ROOT_PASSWORD'
       - 'MYSQL_USER'
-    image: 'talsenteam/docker-applications:nextcloud-database-v8.0.23'
+    image: 'talsenteam/docker-applications:nextcloud-database-v8.0.25'
     networks:
       nextcloud:
     restart: '${HOST_CONTAINER_RESTART}'
