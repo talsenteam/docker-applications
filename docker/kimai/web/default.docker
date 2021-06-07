@@ -1,4 +1,4 @@
-FROM kimai/kimai2:apache-debian-1.13-prod
+FROM kimai/kimai2:apache-1.14.3-prod
 
 USER root
 

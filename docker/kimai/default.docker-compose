@@ -34,7 +34,7 @@ services:
       - 'MAILER_URL'
       - 'TRUSTED_HOSTS'
       - 'TRUSTED_PROXIES'
-    image: 'talsenteam/docker-applications:kimai-web-v1.13'
+    image: 'talsenteam/docker-applications:kimai-web-v1.14.3'
     networks:
       kimai:
     restart: '${HOST_CONTAINER_RESTART}'
