@@ -12,7 +12,7 @@ services:
         nginx['client_max_body_size'] = '250M'
         registry_external_url 'http://localhost:${CONTAINER_REGISTRY_PORT}'
         registry_nginx['enable'] = true
-    image: 'talsenteam/docker-applications:gitlab-app-v13.11.1-ce.0'
+    image: 'talsenteam/docker-applications:gitlab-app-v13.12.2-ce.0'
     hostname: '${HOSTNAME}'
     networks:
       gitlab:
