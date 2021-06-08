@@ -178,7 +178,7 @@ services:
   proxy:
     depends_on:
       - 'web'
-    image: 'talsenteam/docker-applications:nginx-proxy-v1.19.8'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.21.0'
     networks:
       meet.jitsi:
     ports:
