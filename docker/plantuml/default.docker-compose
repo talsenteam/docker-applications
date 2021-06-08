@@ -5,7 +5,7 @@ services:
     build:
       context: './web'
       dockerfile: 'default.docker'
-    image: 'talsenteam/docker-applications:platuml-web-v1.2021.7'
+    image: 'talsenteam/docker-applications:plantuml-web-v1.2021.7'
     networks:
       plantuml:
     restart: '${HOST_CONTAINER_RESTART}'
