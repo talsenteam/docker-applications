@@ -23,7 +23,7 @@ services:
       dockerfile: 'default.docker'
     depends_on:
       - 'database'
-    image: 'talsenteam/docker-applications:wordpress-web-v5.7'
+    image: 'talsenteam/docker-applications:wordpress-web-v5.7.2'
     networks:
       wordpress:
     restart: '${HOST_CONTAINER_RESTART}'
