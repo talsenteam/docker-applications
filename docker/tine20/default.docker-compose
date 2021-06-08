@@ -18,7 +18,7 @@ services:
       - 'SETUP_NAME'
       - 'SETUP_PASS'
       - 'TIMEZONE'
-    image: 'talsenteam/docker-applications:tine20-app-v2021.02.1'
+    image: 'talsenteam/docker-applications:tine20-app-v2021.02.2'
     networks:
       tine:
     restart: '${HOST_CONTAINER_RESTART}'
