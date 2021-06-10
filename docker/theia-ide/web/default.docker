@@ -14,7 +14,9 @@ RUN apt-get update                                                              
                     cmake                                                          \
                     gcovr                                                          \
                     gnupg                                                          \
+                    junit                                                          \
                     lcov                                                           \
+                    maven                                                          \
                     meson                                                          \
                     ninja-build                                                    \
                     ruby                                                           \
