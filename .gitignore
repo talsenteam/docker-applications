@@ -3,6 +3,19 @@
 
 !/.vscode/
 !/.vscode/tasks.json
+!/ansible/
+!/ansible/role/
+!/ansible/role/*/
+!/ansible/role/*/**/
+!/ansible/role/*/**/files/
+!/ansible/role/*/**/files/**
+!/ansible/role/*/**/templates/
+!/ansible/role/*/**/templates/**
+!/ansible/role/*/**/*.j2
+!/ansible/role/*/**/*.yml
+!/ansible/role/*/**/*.py
+!/ansible/role/*/**/.ansible-lint
+!/ansible/role/*/**/.yamllint
 !/bash/
 !/bash/*/
 !/bash/*/*.bash
@@ -20,3 +33,5 @@
 !/.gitignore
 !/LICENCE
 !/README.md
+
+**/__pycache__/**
