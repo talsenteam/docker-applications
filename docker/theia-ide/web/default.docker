@@ -19,9 +19,11 @@ RUN apt-get update                                                              
                     maven                                                          \
                     meson                                                          \
                     ninja-build                                                    \
+                    pandoc                                                         \
                     ruby                                                           \
                     rsync                                                          \
                     software-properties-common                                     \
+                    texlive-full                                                   \
  && add-apt-repository universe --yes                                              \
  && wget --quiet                                                                   \
     ${APT_NET_CORE_DEB_URL}                                                        \
