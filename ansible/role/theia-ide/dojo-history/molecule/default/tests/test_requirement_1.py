@@ -20,5 +20,7 @@ def test_that_dojo_history_does_exit_successful(host):
 
 def test_that_dojo_history_does_log_text_to_console(host):
     r = host.run(f'cd {workspace_dir} ; dojo history')
+    stdout_lines = r.stdout.splitlines()
 
-    assert r.stdout.startswith(f'--> The workspace history is:{os.linesep}--@ git log --oneline{os.linesep}')
+    assert stdout_lines[0] == '--> The workspace history is:'
+    assert stdout_lines[1] == '--@ git log --oneline'
