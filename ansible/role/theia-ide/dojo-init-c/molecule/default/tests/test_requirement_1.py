@@ -24,6 +24,7 @@ def test_that_workspace_template_is_set(host):
     'src/dummy.c',
     'src/dummy.h',
     'test/test_dummy.c',
+    '.gitignore',
     'project.yml',
 ])
 def test_that_template_specific_file_is_existing(host, name):
