@@ -1,0 +1,7 @@
+---
+- name: converge
+  hosts: all
+  roles:
+    - role: dojo-init-cpp
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
