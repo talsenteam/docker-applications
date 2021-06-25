@@ -1,5 +1,5 @@
 ---
-- name: dojo_new_workspace
+- name: act
   raw: "{{ item.command }}"
   with_items:
     - command: "dojo new-workspace test"
