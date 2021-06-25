@@ -18,7 +18,7 @@ def test_that_workspace_directory_exists(host):
     assert d.is_directory
 
 
-def test_that_workspace_directory_name_is_set(host):
+def test_that_workspace_name_is_set(host):
     f = host.file(f'/home/project/{date}-test/.workspace/.name')
 
     assert f.exists
