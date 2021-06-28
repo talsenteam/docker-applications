@@ -11,7 +11,7 @@ now = datetime.datetime.now()
 date = now.strftime('%Y-%m-%d')
 
 
-def test_that_workspace_directory_exists(host):
+def test_that_workspace_directory_does_not_exist(host):
     d = host.file(f'/home/project/{date}-test/.build')
 
     assert not d.exists
