@@ -1,0 +1,9 @@
+---
+- name: prepare
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: install_python3_for_ansible
+      raw: test -e /usr/bin/python3 || (apt-get update --yes && apt-get install --yes python3-minimal)
+      changed_when: false
