@@ -1,18 +1,23 @@
 ---
 - name: arrange
   set_fact:
-    date: "{{ lookup('pipe', 'date -d \"\" +\"%Y-%m-%d\"') }}"
+    workspace_dir: "/home/project/{{ lookup('pipe', 'date -d \"\" +\"%Y-%m-%d\"') }}-test"
 
 - name: arrange
   command: "{{ item.command }}"
+  args:
+    chdir: "{{ item.chdir }}"
   with_items:
     - command: "dojo new-workspace test"
+      chdir: "."
+    - command: "dojo init c"
+      chdir: "{{ workspace_dir }}"
+    - command: "dojo build"
+      chdir: "{{ workspace_dir }}"
 
 - name: act
   command: "{{ item.command }}"
   args:
-    chdir: "/home/project/{{ date }}-test"
+    chdir: "{{ workspace_dir }}"
   with_items:
-    - command: "dojo init c"
-    - command: "dojo build"
     - command: "dojo clean"
