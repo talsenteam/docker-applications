@@ -10,10 +10,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 now = datetime.datetime.now()
 date = now.strftime('%Y-%m-%d')
+workspace_dir = f'/home/project/{date}-test'
 
 
 def test_that_workspace_template_is_set(host):
-    f = host.file(f'/home/project/{date}-test/.workspace/.template')
+    f = host.file(f'{workspace_dir}/.workspace/.template')
 
     assert f.exists
     assert f.is_file
@@ -29,7 +30,7 @@ def test_that_workspace_template_is_set(host):
     '.lcovignore',
 ])
 def test_that_template_specific_file_is_existing(host, name):
-    f = host.file(f'/home/project/{date}-test/{name}')
+    f = host.file(f'{workspace_dir}/{name}')
 
     assert f.exists
     assert f.is_file
