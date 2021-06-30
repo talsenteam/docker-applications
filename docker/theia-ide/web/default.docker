@@ -173,6 +173,9 @@ RUN wget --output-document=/tmp/gunit.tar.gz              \
 COPY ./rootfs/ \
              /
 
+RUN npm install --global \
+                doctoc
+
 USER theia
 
 ENTRYPOINT [ "/bin/bash", "/opt/entrypoint.bash" ]
