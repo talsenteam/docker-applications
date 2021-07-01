@@ -28,6 +28,13 @@ def test_that_dojo_cheat_help_does_print_text_to_console(host):
     assert r.stdout != ''
 
 
+def test_that_dojo_duplicate_help_does_print_text_to_console(host):
+    r = host.run('dojo duplicate --help')
+
+    assert r.rc == 0
+    assert r.stdout != ''
+
+
 def test_that_dojo_history_help_does_print_text_to_console(host):
     r = host.run('dojo history --help')
 

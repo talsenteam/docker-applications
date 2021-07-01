@@ -1,0 +1,24 @@
+---
+- name: arrange
+  set_fact:
+    workspace_dir: "/home/project/{{ lookup('pipe', 'date -d \"\" +\"%Y-%m-%d\"') }}-test"
+
+- name: arrange
+  command: "{{ item.command }}"
+  with_items:
+    - command: "dojo new-workspace test"
+
+- name: arrange
+  command: "{{ item.command }}"
+  args:
+    chdir: "{{ workspace_dir }}"
+  with_items:
+    - command: "dojo init c"
+    - command: "dojo build"
+
+- name: act
+  command: "{{ item.command }}"
+  args:
+    chdir: "{{ workspace_dir }}"
+  with_items:
+    - command: "dojo duplicate --help"
