@@ -1,3 +1,4 @@
+import pytest
 import os
 
 import testinfra.utils.ansible_runner
@@ -7,64 +8,19 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts('all')
 
 
-def test_that_dojo_does_print_text_to_console(host):
-    r = host.run('dojo')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_build_help_does_print_text_to_console(host):
-    r = host.run('dojo build --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_cheat_help_does_print_text_to_console(host):
-    r = host.run('dojo cheat --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_duplicate_help_does_print_text_to_console(host):
-    r = host.run('dojo duplicate --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_history_help_does_print_text_to_console(host):
-    r = host.run('dojo history --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_init_help_does_print_text_to_console(host):
-    r = host.run('dojo init --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_new_workspace_help_does_print_text_to_console(host):
-    r = host.run('dojo new-workspace --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_rebuild_help_does_print_text_to_console(host):
-    r = host.run('dojo rebuild --help')
-
-    assert r.rc == 0
-    assert r.stdout != ''
-
-
-def test_that_dojo_url_help_does_print_text_to_console(host):
-    r = host.run('dojo url --help')
+@pytest.mark.parametrize('command', [
+    'dojo',
+    'dojo build --help',
+    'dojo cheat --help',
+    'dojo duplicate --help',
+    'dojo history --help',
+    'dojo init --help',
+    'dojo new-workspace --help',
+    'dojo rebuild --help',
+    'dojo url --help',
+])
+def test_that_command_does_print_text_to_console(host, command):
+    r = host.run(command)
 
     assert r.rc == 0
     assert r.stdout != ''
