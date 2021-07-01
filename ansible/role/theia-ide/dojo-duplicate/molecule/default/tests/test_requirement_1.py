@@ -12,7 +12,6 @@ now = datetime.datetime.now()
 date = now.strftime('%Y-%m-%d')
 workspace_dir = f'/home/project/{date}-test'
 duplicated_workspace_dir = f'/home/project/{date}-test-2'
-workspace_name_marker_location = '.workspace/.name'
 
 
 def test_that_duplicated_workspace_directory_exists(host):
