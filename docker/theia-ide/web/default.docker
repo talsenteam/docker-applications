@@ -4,6 +4,7 @@ ENV APT_NET_CORE_DEB_URL=https://packages.microsoft.com/config/ubuntu/18.04/pack
 ENV PLUGIN_OMNISHARP_NAME=omnisharp_theia_plugin
 ENV PLUGIN_OMNISHARP_VERSION=v0.0.6
 ENV PLUGIN_OMNISHARP_URL=https://github.com/redhat-developer/omnisharp-theia-plugin/releases/download/${PLUGIN_OMNISHARP_VERSION}/${PLUGIN_OMNISHARP_NAME}.theia
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD 1
 
 USER root
 
@@ -34,7 +35,14 @@ RUN apt-get update                                                              
                    dotnet-sdk-2.2                                                  \
  && gem install ceedling                                                           \
  && npm install --global                                                           \
-                doctoc
+                doctoc                                                             \
+                reveal-md                                                          \
+ && mkdir --parents                                                                \
+          /etc/talsen/reveal-md/                                                   \
+ && cd /etc/talsen/reveal-md/                                                      \
+ && npm install                                                                    \
+        md5                                                                        \
+        request
 
 USER theia
 

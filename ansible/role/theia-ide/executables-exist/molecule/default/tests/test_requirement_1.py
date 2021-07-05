@@ -17,6 +17,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'meson',
     'ninja',
     'pandoc',
+    'reveal-md',
 ])
 def test_that_directory_exists(host, executable):
     r = host.run(f'which {executable}')
