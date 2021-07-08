@@ -41,7 +41,7 @@ MARKDOWN_FILE_ABSOLUTE="$( realpath "${MARKDOWN_FILE}" )"
 STATIC_HTML_DIRECTORY="${MARKDOWN_FILE_ABSOLUTE%.*}.html"
 STATIC_HTML_INDEX="${STATIC_HTML_DIRECTORY}/index.html"
 
-COMMAND="reveal-md --disable-auto-open --preprocessor /etc/talsen/reveal-md/preproc.js ${MARKDOWN_FILE}"
+COMMAND="reveal-md --disable-auto-open -w --preprocessor /etc/talsen/reveal-md/preproc.js ${MARKDOWN_FILE}"
 
 echo "--> Converting MD to HTML:"
 echo "--> Click on the link below, to open the generated presentation."
