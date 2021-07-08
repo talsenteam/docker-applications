@@ -3,6 +3,7 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
+source /etc/talsen/config/presentation-url.bash
 source /etc/talsen/util/detect-command-name.bash
 source /etc/talsen/util/detect-help-flag.bash
 source /etc/talsen/util/print-help-flag-text.bash
@@ -12,11 +13,11 @@ WORKSPACE_NAME_SUFFIX=$( date +%F )
 
 function print_help() {
     echo "Usage: dojoctl ${SCRIPT_NAME} <md-file>"
-    echo "  <md-file>: Markdown file which should be converted to a static HTML page,"
-    echo "             the generated static HTML directory will be"
-    echo "             alongside the processed markdown file."
+    echo "  <md-file>: Markdown file which should be converted to a HTML page,"
+    echo "             the generated HTML directory will be hosted under:"
+    echo "               ${PRESENTATION_URL}"
     print_help_flag_text
-    echo "--> Converts a MD file to a static HTML page."
+    echo "--> Converts a MD file to a HTML page."
 }
 
 if [[ ${#} = 0 ]] || [[ $( detect_help_flag ${@:1} ) = 1 ]];
@@ -40,13 +41,11 @@ MARKDOWN_FILE_ABSOLUTE="$( realpath "${MARKDOWN_FILE}" )"
 STATIC_HTML_DIRECTORY="${MARKDOWN_FILE_ABSOLUTE%.*}.html"
 STATIC_HTML_INDEX="${STATIC_HTML_DIRECTORY}/index.html"
 
-mkdir --parents "${STATIC_HTML_DIRECTORY}"
+COMMAND="reveal-md --disable-auto-open --preprocessor /etc/talsen/reveal-md/preproc.js ${MARKDOWN_FILE}"
 
-cd "${STATIC_HTML_DIRECTORY}"
-
-COMMAND="reveal-md --disable-auto-open --preprocessor /etc/talsen/reveal-md/preproc.js --static ${STATIC_HTML_DIRECTORY} ${MARKDOWN_FILE_ABSOLUTE}"
-
-echo "--> Converting MD to static HTML:"
+echo "--> Converting MD to HTML:"
+echo "--> Click on the link below, to open the generated presentation."
+echo "-->   ${PRESENTATION_URL}/${MARKDOWN_FILE}"
+echo ""
 echo "--@ ${COMMAND}"
 ${COMMAND}
-echo "--> ${STATIC_HTML_INDEX}"

@@ -24,6 +24,7 @@ services:
       - '${HOST_HTTPS_PORT}:443'
     restart: '${HOST_CONTAINER_RESTART}'
     volumes:
+      - './proxy.conf:/templates/vhost.template.conf:ro'
       - './proxy.env:/etc/nginx/env/proxy.env:ro'
       - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/cache/:/cache'
       - '${HOST_PATH_TO_VOLUMES_ROOT}/proxy/manual-config/:/manual-config:ro'
