@@ -5,7 +5,7 @@ services:
     build:
       context: './proxy'
       dockerfile: 'default.docker'
-    image: 'talsenteam/docker-applications:nginx-proxy-v1.21.0'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.21.1'
     restart: '${HOST_CONTAINER_RESTART}'
     volumes:
       - './proxy.env:/etc/nginx/env/proxy.env:ro'
