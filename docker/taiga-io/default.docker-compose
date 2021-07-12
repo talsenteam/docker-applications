@@ -35,7 +35,7 @@ services:
   proxy:
     depends_on:
       - 'app'
-    image: 'talsenteam/docker-applications:nginx-proxy-v1.21.0'
+    image: 'talsenteam/docker-applications:nginx-proxy-v1.21.1'
     networks:
       taiga:
     ports:
