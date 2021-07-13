@@ -8,10 +8,10 @@ if (!fs.existsSync(plantumlDir)){
     fs.mkdirSync(plantumlDir);
 }
 
-var createPNG = (plantumlScript, fileNameAbsolute) => {
+var createSVG = (plantumlScript, fileNameAbsolute) => {
     request.post({
         // set you plantuml server here
-        url:  'https://plantuml.talsen.team/png/',
+        url:  'https://plantuml.talsen.team/svg/',
         body: plantumlScript
       })
       .pipe(fs.createWriteStream(fileNameAbsolute));
@@ -26,15 +26,15 @@ var resolvePlantuml = (markdown) =>
         // -> the found capturegroup is available in the variable "text". It is the plantuml script.
     
         // using md5 hash of the text as filename
-        var fileName = "picture" + md5(text) + ".png"
+        var fileName = "picture" + md5(text) + ".svg"
         var fileNameAbsolute = plantumlDir + fileName;
         
         console.log(text);
         
-        // create rendered PNG if not already exists
+        // create rendered SVG if not already exists
         if (!fs.existsSync(fileNameAbsolute)) {
             console.log("Save as: " + fileNameAbsolute);
-            createPNG(text, fileNameAbsolute);
+            createSVG(text, fileNameAbsolute);
         } else {
             console.log("File already exists: " + fileNameAbsolute);
         }
