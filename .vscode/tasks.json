@@ -991,6 +991,72 @@
       "problemMatcher": [ ],
     },
     {
+      "label": "theia-ide-next--build",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-build-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide-next--down",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-down-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide-next--rebuild",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-rebuild-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide-next--reload-proxy",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-reload-proxy-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide-next--up",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-up-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
+      "label": "theia-ide-next--wipe-volumes",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args":
+      [
+        "./bash/common/run-wipe-volumes-as-root.bash",
+        "theia-ide-next",
+      ],
+      "problemMatcher": [ ],
+    },
+    {
       "label": "tine20--build",
       "type": "shell",
       "command": "/bin/bash",
