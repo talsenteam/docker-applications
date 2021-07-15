@@ -3,6 +3,10 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
+source /etc/talsen/utility/detect-script-name.bash
+
+SCRIPT_NAME=$( detect_script_name ${0} )
+
 COMMAND_DIR=/etc/talsen/command/dojo
 
 function print_help() {
