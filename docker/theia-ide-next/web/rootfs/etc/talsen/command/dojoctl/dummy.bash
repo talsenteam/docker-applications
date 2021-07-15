@@ -3,4 +3,5 @@
 set -euo pipefail
 shopt -s inherit_errexit
 
-echo "Hello, world!"
+echo "--@ dojoctl"
+echo "    Hello, world!"

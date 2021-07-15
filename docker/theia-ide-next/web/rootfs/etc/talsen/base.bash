@@ -7,7 +7,7 @@ source /etc/talsen/utility/detect-script-name.bash
 
 SCRIPT_NAME=$( detect_script_name ${0} )
 
-COMMAND_DIR=/etc/talsen/command/dojo
+COMMAND_DIR=/etc/talsen/command/${SCRIPT_NAME}
 
 function print_help() {
     for COMMAND in $( cd ${COMMAND_DIR} && ls *.bash )
