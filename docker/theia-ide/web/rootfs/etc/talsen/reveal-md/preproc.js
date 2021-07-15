@@ -10,7 +10,7 @@ if (!fs.existsSync(plantumlDir)){
 
 var createSVG = (plantumlScript, fileNameAbsolute) => {
     request.post({
-        // set you plantuml server here
+        // set your plantuml server here
         url:  'https://plantuml.talsen.team/svg/',
         body: plantumlScript
       })

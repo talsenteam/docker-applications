@@ -183,6 +183,8 @@ RUN wget --output-document=/tmp/gunit.tar.gz              \
 COPY ./rootfs/ \
              /
 
+RUN chown --recursive theia:theia /etc/talsen/sync
+
 USER theia
 
 ENTRYPOINT [ "/bin/bash", "/opt/entrypoint.bash" ]
