@@ -1,3 +1,11 @@
 FROM theiaide/theia-full:1.15.0
 
+USER root
+
+COPY ./rootfs-build /build
+
+RUN /bin/bash /build/install-doctoc.bash
+
 COPY ./rootfs/ /
+
+USER theia
