@@ -16,6 +16,7 @@ RUN apt-get update                                                              
                     gcovr                                                          \
                     gnupg                                                          \
                     junit                                                          \
+                    libboost-all-dev                                               \
                     lcov                                                           \
                     maven                                                          \
                     meson                                                          \
